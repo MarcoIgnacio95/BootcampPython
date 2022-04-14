@@ -25,22 +25,41 @@ cuestionarios= ["hábitos alimenticios", "cuestionario de empleabilidad", "exper
 edadusuario= int(input("¿Qué edad tienes?: "))
 lugarusuario= input("¿Eres de origen latinoamericano?: ")
 deporteusuario= input("¿Tienes afinidad por el deporte?: ")
+cuestrespon= []
 
 if lugarusuario == "si": 
-    print(cuestionarios[0])
+    #print(cuestionarios[0]) #append es para agregar datos a un listado vacío, ordenados respectivamente.
+    cuestrespon.append(cuestionarios[0])
     if edadusuario == 30 or edadusuario < 59:
-        print(cuestionarios[2])
+        #print(cuestionarios[2])
+        cuestrespon.append(cuestionarios[2])
         if edadusuario < 60:
-            print(cuestionarios[3])
+            #print(cuestionarios[3])
+            cuestrespon.append(cuestionarios[3])
             if deporteusuario == "si" and edadusuario < 60:
-                print(cuestionarios[5])
+                #print(cuestionarios[5])
+                cuestrespon.append(cuestionarios[5])
+
 elif lugarusuario == "no":
-    print(cuestionarios[0])
+    #print(cuestionarios[0])
+    cuestrespon.append(cuestionarios[0])
     if edadusuario > 18 and edadusuario < 29:
-        print(cuestionarios[1])
+        #print(cuestionarios[1])
+        cuestrespon.append(cuestionarios[1])
         if edadusuario < 60:
-            print(cuestionarios[4])
+            #print(cuestionarios[4])
+            cuestrespon.append(cuestionarios[4])
 elif deporteusuario == "no":
-    print(cuestionarios[6])
+    #print(cuestionarios[6])
+    cuestrespon.append(cuestionarios[6])
 else: 
     print("Los datos ingresados no son correctos. Por favor, intente nuevamente.")
+
+#print(cuestrespon)
+
+contador= 0 #integer: variable de tipo entero (number)
+for cuestionario in cuestrespon: #función de control que itera sobre el listado cuestrespon 
+    contador += 1
+    if contador < 4: 
+        print(cuestionario)
+
